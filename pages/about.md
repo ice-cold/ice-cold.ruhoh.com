@@ -1,5 +1,5 @@
 ---
-title : About Me
+title : ice-cold's Blog
 description:
 ---
 
