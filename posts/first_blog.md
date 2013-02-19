@@ -90,7 +90,7 @@ ruhoh gem依赖于：
 
 	$git push origin master
 
-Your blog is now available at: http://USERNAME.ruhoh.com。
+Your blog is now available at: http://USERNAME.ruhoh.com
 
 接下来创建第一篇博文：
 
