@@ -80,7 +80,7 @@ ruhoh gem依赖于：
 
 打开浏览器访问http://localhost:9292/ 就能看到默认页面。
 
-或者将你的rep推送到github
+或者将你的rep推送到github:
 
 	$git clone git://github.com/ruhoh/blog.git USERNAME.ruhoh.com
 
@@ -90,9 +90,8 @@ ruhoh gem依赖于：
 
 	$git push origin master
 
-Your blog is now available at: http://USERNAME.ruhoh.com
+Your blog is now available at: http://USERNAME.ruhoh.com。
 
-现在把以上步骤记录到我的第一篇博客里：
 接下来创建第一篇博文：
 
 	$ruhoh post first_blog
