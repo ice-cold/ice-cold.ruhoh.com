@@ -3,7 +3,7 @@ title: windows下安装DevKit
 date: '2013-02-19'
 description: 如何在windows下安装DevKit
 categories: 软件安装
-Tags: [ruby, DevKit ]
+tags: [ruby, DevKit ]
 ---
 
 ##windows下安装或升级时gem经常会碰到##
