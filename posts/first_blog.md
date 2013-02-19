@@ -8,7 +8,7 @@ tags: [ruhoh, Markdown, git, github, windows ]
 
 ## 开始博客 ##
 
-**第一篇就记录一下[如何使用ruhoh，Github搭建个人博客](http://ice-cold.ruhoh.com/how-to/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/)**
+**第一篇就记录一下[如何使用ruhoh，Github搭建个人博客](http://ice-cold.ruhoh.com/how-to/first-blog/)**
 
 
 首先介绍一下如何基于开源的ruhoh搭建一个人博客，以及为什么选择[Ruhoh静态博客](http://ruhoh.com/)。
@@ -109,6 +109,7 @@ Your blog is now available at: http://USERNAME.ruhoh.com
 
 
 **Reference**
+
 1. [Git基础](http://www.open-open.com/lib/view/open1328069733264.html)
 
 2. [Git的深入理解与GitHub托管服务的使用](http://www.cnblogs.com/cocowool/archive/2012/02/17/2356125.html)
