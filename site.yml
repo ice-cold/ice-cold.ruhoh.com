@@ -20,7 +20,6 @@ plugins:
     file_name: sitemap.xml
     exclude_id:
       - search.html
-      - pages.html
     change_frequency_custom_name: changefreq
     priority_custom_variable_name: priority
   google_site_verification: google5823cc9dfbc3cbfb
