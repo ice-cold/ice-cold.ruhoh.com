@@ -8,7 +8,7 @@ tags: [python ]
 
 ##一张图解析python##
 <p>
-  <img src="{{urls.media}}/python-rumen.jpg">
+  <img src="{{urls.media}}/python-rumen.jpg" width=100%>
 </p>
 
 ##python支持的正则表达式##
