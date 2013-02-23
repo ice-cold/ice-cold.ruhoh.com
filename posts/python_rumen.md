@@ -8,12 +8,12 @@ tags: [python ]
 
 ##一张图解析python##
 <p>
-  <img src="{{urls.media}}/python-rumen.jpt">
+  <img src="{{urls.media}}/python-rumen.jpg">
 </p>
 
 ##python支持的正则表达式##
 <p>
-  <img src="{{urls.media}}/rugular_expresions.jpt">
+  <img src="{{urls.media}}/rugular_expresions.jpg">
 </p>
 
 **学习资源：**
