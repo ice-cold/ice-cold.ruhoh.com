@@ -15,6 +15,6 @@ description:
 </div>
 
 <div class="span3">
-    <img src="/assets/media/sw.png" />
+    <img src="/assets/media/sw.png" width="150"/>
 </div>
 
