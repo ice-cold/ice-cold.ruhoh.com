@@ -25,4 +25,4 @@ plugins:
   google_site_verification: google5823cc9dfbc3cbfb
 
 pages:
-  exclude: sitemap.xml
+  exclude: '~$'
