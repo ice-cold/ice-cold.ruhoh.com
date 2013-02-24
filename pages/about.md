@@ -3,7 +3,7 @@ title : About Me
 description:
 ---
 <div class="span7">
-	<h4>Hi all, my name is <a href="ice-cold.ruhoh.com">CT Ye</a> . I like to</h4>
+	<h4>Hi all, my name is <a href="http://ice-cold.ruhoh.com">CT Ye</a> . I like to</h4>
 
 	<ul>
    		<li>Read news about information technologies.</li>
