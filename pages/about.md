@@ -3,8 +3,9 @@ title : About Me
 description:
 ---
 <div class="span8">
+	</br>
 	<h4>Hi all, my name is <a href="http://ice-cold.ruhoh.com">CT Ye</a> . I like to</h4>
-
+	</br>
 	<ul>
    		<li>Read news about information technologies.</li>
    		<li>Write some blog to record what I have learned.</li>
