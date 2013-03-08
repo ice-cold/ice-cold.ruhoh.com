@@ -17,15 +17,11 @@ tags: [Matlab, MEX ]
 
 **a. MEX文件格式(mexFunction函数)**
 
-$#include "mex.h"
-
-$void mexFunction( int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[] )
-
-${
-
-$
-
-$}
+    #include "mex.h"
+    void mexFunction( int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[] )
+    {
+    
+    }
 
 四个参数分别用来输出和输入数据: **nlhs 输出参数个数，plhs 输出参数指针** (nrhs和prhs是输入参数相关的)。
 
@@ -35,17 +31,12 @@ $}
 
 **对输入数据进行操作，需要通过MEX函数mxGetPr 得到数据的指针地址。 mxGetM 和 mxGetN 得到矩阵数据的行和列 (返回整数)。对于实矩阵，我们可以定义 double *M; 来对实矩阵数据操作。如:**
 
-$double *M;
-
-$int m,n;
-
-$// 指针指向第一个参数的数据地址
-
-$M = mxGetPr(prhs[0]);
-
-$m = mxGetM(prhs[0]);
-
-$n = mxGetN(prhs[0]);
+    double *M;
+    int m,n;
+    // 指针指向第一个参数的数据地址
+    M = mxGetPr(prhs[0]);
+    m = mxGetM(prhs[0]);
+    n = mxGetN(prhs[0]);
 
 需要注意的是，**MATLAB矩阵数据的存储顺序是"从上到下，从左到右"**的，这点和Fortran是一样的。也就是说对于MATLAB的m x n的矩阵A。 A(1,1) 就是 *M，A(2,1) 就是 *(M+1) ，以此类推，A(i,j) 就是 *(M + m*(j-1) + (i-1)).
 
@@ -59,9 +50,8 @@ plhs[0] = mxCreateDoubleMatrix(m,n, mxREAL); //生成m x n 的实矩阵。
 
 同输入数据一样，要对输出数据操作，我们也需要一个**指向数据的指针变量**，如
 
-$double *A;
-
-$A = mxGetPr(plhs[0]);
+    double *A;
+    A = mxGetPr(plhs[0]);
 
 下面介绍一下如何使用VS2008编写MEX并编译调试。
 
@@ -97,9 +87,8 @@ EXPORTS
 
 要调试MEX程序就要先编译，再调用她。所以我们需要在MATLAB中调用这个函数，并在VC的MEX程序相应位置处下断点即可。调用的函数名就是dll的主文件名，你可以根据自己的需要改名。我们用mymexfun.dll为例，先在VC的 mexFunction 函数代码段开始处F9下断。然后Ctrl+Alt+P附加MATLAB.exe进程。这样就可以运行命令调试程序了。我们可以在MATLAB的命令行里输入命令:
 
-$[输出变量] = mymexfun(输入变量)
-
-$(如果命令找不到，检查一下matlab当前路径，和path路径。)
+    [输出变量] = mymexfun(输入变量)
+    (如果命令找不到，检查一下matlab当前路径，和path路径。)
 
 程序一旦被调用，就会被断在我们的断点处。接着你就可以像调试C++程序那样调试MEX程序了。
 
