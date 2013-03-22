@@ -699,13 +699,13 @@ Windows NT 运行时分配程序提供 Windows NT 内的核心堆分配程序。
 典型的堆实现由前、后端分配程序组成。前端分配程序维持固定大小块的空闲列表。对于一次分配调用，堆尝试从前端列表找到一个自由块。如果失败，堆被迫从后端（保留和提交虚拟内存）分配一个大块来满足请求。通用的实现有每块分配的开销，这将耗费执行周期，也减少了可使用的存储空间。
 
 Knowledge Base 文章 Q10758，“用 calloc() 和 malloc() 管理内存” （搜索文章编号），
-作中找到：“Dynamic Storage Allocation: A Survey and Critical Review”，作者 Paul R. Wilson、Mark S. Johnstone、 Michael Neely 和 David Boles； “International Workshop on MemoryManagement”, 作者 Kinross, Scotland, UK, 1995 年 9 月(http://www.cs.utexas.edu/users/oops/papers.html)（英文）。
+作中找到：“Dynamic Storage Allocation: A Survey and Critical Review”，作者 Paul R. Wilson、Mark S. Johnstone、 Michael Neely 和 David Boles； “International Workshop on MemoryManagement”, 作者 Kinross, Scotland, UK, 1995 年 9 月( http://www.cs.utexas.edu/users/oops/papers.html )（英文）。
 
  
 Windows NT 的实现（Windows NT 版本 4.0 和更新版本） 使用了 127 个大小从 8 到1,024 字节的 8 字节对齐块空闲列表和一个“大块”列表。“大块”列表（空闲列表[0]） 保存大于 1,024 字节的块。空闲列表容纳了用双向链表链接在一起的对象。默认情况下，“进程堆”执行收集操作。（收集是将相邻空闲块合并成一个大块的操作。）收集耗
 费了额外的周期，但减少了堆块的内部碎片。
 
-单一全局锁保护堆，防止多线程式的使用。（请参见“Server Performance and Scalability Killers”中的第一个注意事项, George Reilly 所著，在 “MSDN Online Web Workshop”上（站点：http://msdn.microsoft.com/workshop/server/iis/tencom.asp（英文）。）单一全局锁本质上是用来保护堆数据结构，防止跨多线程的随机存取。若堆操作太频繁，单一全局锁会对性能有不利的影响。
+单一全局锁保护堆，防止多线程式的使用。（请参见“Server Performance and Scalability Killers”中的第一个注意事项, George Reilly 所著，在 “MSDN Online Web Workshop”上（站点： http://msdn.microsoft.com/workshop/server/iis/tencom.asp （英文）。）单一全局锁本质上是用来保护堆数据结构，防止跨多线程的随机存取。若堆操作太频繁，单一全局锁会对性能有不利的影响。
 
 什么是常见的堆性能问题？
 
@@ -893,8 +893,8 @@ the heap, you must free the memory area manually with free or delete, else it wi
 
 memory leak.
 
-3)栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。
+3) 栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。
 
-4）堆上分配的内存可以有我们自己决定，使用非常灵活。
+4) 堆上分配的内存可以有我们自己决定，使用非常灵活。
 
 ---------------------------------------------------------------
