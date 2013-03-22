@@ -885,19 +885,13 @@ CObject* pobject=new CObject();
 
 1) about stack, system will allocate memory to the instance of object automatically, and
 
-to the
-
-heap, you must allocate memory to the instance of object with new or malloc manually.
+to the heap, you must allocate memory to the instance of object with new or malloc manually.
 
 2) when function ends, system will automatically free the memory area of stack, but to
 
-the
+the heap, you must free the memory area manually with free or delete, else it will result in
 
-heap, you must free the memory area manually with free or delete, else it will result in
-
-memory
-
-leak.
+memory leak.
 
 3)栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。
 
