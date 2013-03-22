@@ -73,7 +73,7 @@ heap:
 
 需要程序员自己申请，并指明大小，在 c 中 malloc 函数如 p1 = (char *)malloc(10);
 
-在 C++中用 new 运算符，如 p2 = (char *)malloc(10);
+在 C++中用 new 运算符，如char *p2 = new char [10];
 
 但是注意 p1、p2 本身是在栈中的。
 
