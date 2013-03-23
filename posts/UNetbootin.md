@@ -7,6 +7,10 @@ tags: [UNentbootin, U盘 ]
 ---
 ##UNetbootin##
 
+<p>
+  <img src="{{urls.media}}/UNetbootin_logo.png">
+</p>
+
 **UNetbootin allows you to create bootable Live USB drives for Windows and other Linux distributions without burning a CD.**
 
 **It runs on both Windows and Linux. You can either let UNetbootin download one of the many distributions supported out-of-the-box for you, or supply your own Windows or Linux .iso file if you’ve already downloaded one or your preferred distribution isn’t on the list.
