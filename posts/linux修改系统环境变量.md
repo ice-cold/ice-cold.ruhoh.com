@@ -30,106 +30,76 @@ tags: [linux, 环境变量 ]
 
  本例使用echo显示常见的变量HOME
 
-$ echo $HOME 
-
- /home/kevin
+    $ echo $HOME 
+    /home/kevin
 
  **1.2设置一个新的环境变量**
 
- $ export MYNAME=”my name is kevin”
-
- $ echo $ MYNAME
-
- my name is Kevin
+    $ export MYNAME=”my name is kevin”
+    $ echo $ MYNAME
+    my name is Kevin
 
  **1.3修改已存在的环境变量**
 
  接上个示例
 
- $ MYNAME=”change name to jack”
-
- $ echo $MYNAME
-
- change name to jack
+    $ MYNAME=”change name to jack”
+    $ echo $MYNAME
+    change name to jack
 
  **1.4使用env命令显示所有的环境变量**
 
- $ env
-
- HOSTNAME=localhost.localdomain
-
- SHELL=/bin/bash
-
- TERM=xterm
-
- HISTSIZE=1000
-
- SSH_CLIENT=192.168.136.151 1740 22
-
- QTDIR=/usr/lib/qt-3.1
-
- SSH_TTY=/dev/pts/0
-
- ……
+    $ env
+    HOSTNAME=localhost.localdomain
+    SHELL=/bin/bash
+    TERM=xterm
+    HISTSIZE=1000
+    SSH_CLIENT=192.168.136.151 1740 22
+    QTDIR=/usr/lib/qt-3.1
+    SSH_TTY=/dev/pts/0
+    ……
 
  **1.5使用set命令显示所有本地定义的Shell变量**
 
- $ set
-
- BASH=/bin/bash
-
- BASH_ENV=/root/.bashrc
-
- ……
+    $ set
+    BASH=/bin/bash
+    BASH_ENV=/root/.bashrc
+    ……
 
  **1.6使用unset命令来清除环境变量**
 
- $ export TEMP_KEVIN=”kevin”     #增加一个环境变量TEMP_KEVIN
-
- $ env | grep TEMP_KEVIN          #查看环境变量TEMP_KEVIN是否生效（存在即生效）
-
- TEMP_KEVIN=kevin #证明环境变量TEMP_KEVIN已经存在
-
- $ unset TEMP_KEVIN            #删除环境变量TEMP_KEVIN
-
- $ env | grep TEMP_KEVIN       
- #查看环境变量TEMP_KEVIN是否被删除，没有输出显示，证明TEMP_KEVIN被清除了。
+    $ export TEMP_KEVIN=”kevin”     #增加一个环境变量TEMP_KEVIN
+    $ env | grep TEMP_KEVIN          #查看环境变量TEMP_KEVIN是否生效（存在即生效）
+    TEMP_KEVIN=kevin #证明环境变量TEMP_KEVIN已经存在
+    $ unset TEMP_KEVIN            #删除环境变量TEMP_KEVIN
+    $ env | grep TEMP_KEVIN       #查看环境变量TEMP_KEVIN是否被删除，没有输出显示，证明TEMP_KEVIN被清除了。
 
  **1.7使用readonly命令设置只读变量**
 
  注：如果使用了readonly命令的话，变量就不可以被修改或清除了。
 
- $ export TEMP_KEVIN ="kevin"      #增加一个环境变量TEMP_KEVIN
-
- $ readonly TEMP_KEVIN #将环境变量TEMP_KEVIN设为只读
-
- $ env | grep TEMP_KEVIN          #查看环境变量TEMP_KEVIN是否生效
-
- TEMP_KEVIN=kevin        #证明环境变量TEMP_KEVIN已经存在
-
- $ unset TEMP_KEVIN          #会提示此变量只读不能被删除
-
- -bash: unset: TEMP_KEVIN: cannot unset: readonly variable
-
- $ TEMP_KEVIN ="tom"        #修改变量值为tom会提示此变量只读不能被修改
-
- -bash: TEMP_KEVIN: readonly variable
+    $ export TEMP_KEVIN ="kevin"      #增加一个环境变量TEMP_KEVIN
+    $ readonly TEMP_KEVIN #将环境变量TEMP_KEVIN设为只读
+    $ env | grep TEMP_KEVIN          #查看环境变量TEMP_KEVIN是否生效
+    TEMP_KEVIN=kevin        #证明环境变量TEMP_KEVIN已经存在
+    $ unset TEMP_KEVIN          #会提示此变量只读不能被删除
+    -bash: unset: TEMP_KEVIN: cannot unset: readonly variable
+    $ TEMP_KEVIN ="tom"        #修改变量值为tom会提示此变量只读不能被修改
+    -bash: TEMP_KEVIN: readonly variable
 
  **1.8通过修改环境变量定义文件来修改环境变量**
 
  需要注意的是，一般情况下，仅修改普通用户环境变量配置文件，避免修改根用户的环境定义文件，因为那样可能会造成潜在的危险。
 
- $ cd ~                 #到用户根目录下
-
- $ ls -a                #查看所有文件，包含隐藏的文件
-
- $ vi .bash_profile                #修改用户环境变量文件
+    $ cd ~                 #到用户根目录下
+    $ ls -a                #查看所有文件，包含隐藏的文件
+    $ vi .bash_profile                #修改用户环境变量文件
 
  例如：
 
  编辑你的PATH声明，其格式为：
 
- PATH=$PATH:<PATH 1>:<PATH 2>:<PATH 3>:------:<PATH N>
+     PATH=$PATH:<PATH 1>:<PATH 2>:<PATH 3>:------:<PATH N>
 
  你可以自己加上指定的路径，中间用冒号隔开。
 
@@ -160,9 +130,8 @@ $ echo $HOME
 
  例如：编辑/etc/profile文件，添加CLASSPATH变量
 
- $ vi /etc/profile
-
- export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
+    $ vi /etc/profile
+    export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
 
  注：修改文件后要想马上生效还要运行# source /etc/profile不然只能在下次重进此用户时生效。
 
@@ -172,11 +141,11 @@ $ echo $HOME
 
  例如：编辑guok用户目录（/home/guok）下的.bash_profile
 
- $ vi /home/guok/.bash.profile
+    $ vi /home/guok/.bash.profile
 
  添加如下内容：
 
- export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
+    export CLASSPATH=./JAVA_HOME/lib;$JAVA_HOME/jre/lib
 
  注：修改文件后要想马上生效还要运行$ source 
  /home/guok/.bash_profile不然只能在下次重进此用户时生效。
