@@ -9,7 +9,7 @@ tags: [C, 格式 ]
 
 %lf 和 %f是有区别的，主要体现在输入的情况下, 如下：
 
-  	#define intdex long
+  		#define intdex long
 		typedef struct XYZType{
 		  double Loc[3];
 		  void * ref;
@@ -26,7 +26,7 @@ tags: [C, 格式 ]
 		PList Points;
 		in=fopen("tin.txt", "r");
 		...
- 这时需要使用
+这时需要使用
 
 		fscanf(in, "%lf %lf %lf\n", &Points.P[i].Loc[0],&Points.P[i].Loc[1],&Points.P[i].Loc[2]);
 
@@ -37,7 +37,7 @@ tags: [C, 格式 ]
 将读入无效数.
 
 
-    C中格式字符串的一般形式为： [标志][输出最小宽度][.精度][长度]类型其中方括号[]中的项为可选项。各项的意义介绍如下：
+C中格式字符串的一般形式为： [标志][输出最小宽度][.精度][长度]类型其中方括号[]中的项为可选项。各项的意义介绍如下：
 
 1.类型字符用以表示输出数据的类型，其格式符和意义下表所示：
 
@@ -231,11 +231,11 @@ tags: [C, 格式 ]
 
     ll和整数转换说明符一起使用，表示一个long int 或者unsigned long int类型的数值 (C99)，示例：%lld,%8llu
 
-	L和浮点转换说明符一起使用，表示一个long double的值，示例：%Lf，%10.4Le
+    L和浮点转换说明符一起使用，表示一个long double的值，示例：%Lf，%10.4Le
 
-	t和整数转换说明符一起使用，表示一个ptrdiff_t值(两个指针之间的差相对应的类型)(C99)，示例：%td,%12ti
+    t和整数转换说明符一起使用，表示一个ptrdiff_t值(两个指针之间的差相对应的类型)(C99)，示例：%td,%12ti
 
-	z和整数转换说明符一起使用，表示一个size_t值(sizeof返回的类型)(C99)，示例：%zd,%12zx
+    z和整数转换说明符一起使用，表示一个size_t值(sizeof返回的类型)(C99)，示例：%zd,%12zx
 
 		main(){
 		int a=15;
