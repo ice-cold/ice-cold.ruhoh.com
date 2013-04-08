@@ -10,7 +10,7 @@ tags: [FastCGI, Apache Module, IIS ISAPI ]
 
 　　FastCGI是语言无关的、可伸缩架构的CGI开放扩展，其主要行为是将CGI解释器进程保持在内存中并因此获得较高的性能。众所周知，CGI解释器的反复加载是CGI性能低下的主要原因，如果CGI解释器保持在内存中并接受FastCGI进程管理器调度，则可以提供良好的性能、伸缩性、Fail-Over特性等等。
     
-    FastCGI的官方站点在：http://www.fastcgi.com
+   FastCGI的官方站点在：http://www.fastcgi.com
 
 　　FastCGI的工作原理是：
 
@@ -48,7 +48,7 @@ tags: [FastCGI, Apache Module, IIS ISAPI ]
 
 　　　　注意：建议在Php.ini中关闭cgi.force_redirect，启用fastcgi.impersonate，启用cgi.rfc2616_header
 
-　　2、下载http://www.caraveo.com/fastcgi/fastcgi-0.6.zip并将其中的isapi_fcgi.dll解压缩到c:\php目录下（不是必须在此目录，这里只是叙述方便）。
+　　2、下载http://www.caraveo.com/fastcgi/fastcgi-0.6.zip  并将其中的isapi_fcgi.dll解压缩到c:\php目录下（不是必须在此目录，这里只是叙述方便）。
 
 　　3、使用regedit.exe建立如下注册表项：
 
@@ -90,7 +90,8 @@ tags: [FastCGI, Apache Module, IIS ISAPI ]
 
          3). 点击“配置”按钮，选择“映射”Tab页。
 
-         4). 点击“添加...”，在“可执行文件”设为: c:\php\isapi_fcgi.dll，扩展名设为.php，一定要选择“确认文件是否存在”，然后“确定”保存设置。
+         4). 点击“添加...”，在“可执行文件”设为: c:\php\isapi_fcgi.dll，扩展名设为.php，一定要选择“确认文件是否存在”，
+         然后“确定”保存设置。
 
          5). 再同样添加对.php3或.phtml扩展名的支持（可选）。
 
@@ -104,7 +105,7 @@ tags: [FastCGI, Apache Module, IIS ISAPI ]
 
 　　　　注意：建议在Php.ini中打开cgi.force_redirect，关闭fastcgi.impersonate，关闭cgi.rfc2616_headers。
 
-　　2、下载http://www.fastcgi.com/dist/mod_fastcgi-2.4.2-AP20.dll，放到Apache 2.x的Modules目录中。
+　　2、下载http://www.fastcgi.com/dist/mod_fastcgi-2.4.2-AP20.dll ，放到Apache 2.x的Modules目录中。
 
 　　3、确定Apache 2.x在CGI方式下可以正常运行PHP。httpd.conf中存在如下几行：
 
