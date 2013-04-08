@@ -18,7 +18,7 @@ CGI即通用网关接口(Common Gateway Interface)，它是一段程序，运行
 
 3）CGI程序的执行
 
-CGI 程序一般是个可执行程序。编译好的CGI程序一般要集中放在一个目录下。具体存放的位置随操作系统的不同而不同。CGI程序的执行一般有两种调用方式：第一种是通过URL直接调用，如：“http://202.114.2.182/cgi-win /cgi.exe”，在浏览器的URL栏里直接写入上述描述就可以调用该程序；另一种方式，也是主要的方式,是通过交互式主页里的FORM栏调用，通常都是用户在填完一张输入信息Form后按确认按钮启动CGI程序。
+CGI 程序一般是个可执行程序。编译好的CGI程序一般要集中放在一个目录下。具体存放的位置随操作系统的不同而不同。CGI程序的执行一般有两种调用方式：第一种是通过URL直接调用，如：“http://202.114.2.182/cgi-win/cgi.exe”，在浏览器的URL栏里直接写入上述描述就可以调用该程序；另一种方式，也是主要的方式,是通过交互式主页里的FORM栏调用，通常都是用户在填完一张输入信息Form后按确认按钮启动CGI程序。
 
 4）CGI工作的主要流程
 
@@ -73,22 +73,22 @@ Internet客户端通过HTTP服务器调用ISAPI的方法与调用CGI应用程序
 ISAPI 筛选器没有等效的 CGI 筛选器。筛选器提供预处理和后处理在客户端和服务器之间发送的所有数据的能力。
 
 **FastCGI**
-    1. FastCGI 像是一个常驻 (long-live) 型的 CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去 fork 一次 (这是 CGI 最为人诟病的 fork-and-execute 模式)。
 
-　　2. FastCGI 可在任何平台上使用，Netscape Enterprise 及 IIS 都有 FastCGI 的模块可供使用，阿帕契 (Apache，以及利用 Apache 衍生出做的服务器) 上也有 mod_fastcgi 可用。
+   1. FastCGI 像是一个常驻 (long-live) 型的 CGI，它可以一直执行着，只要激活后，不会每次都要花费时间去 fork 一次 (这是 CGI 最为人诟病的 fork-and-execute 模式)。
 
-　　3. FastCGI 支持 C/C++，Ruby, Perl，Tcl，Java，Python 等程序语言。
+　 2. FastCGI 可在任何平台上使用，Netscape Enterprise 及 IIS 都有 FastCGI 的模块可供使用，阿帕契 (Apache，以及利用 Apache 衍生出做的服务器) 上也有 mod_fastcgi 可用。
 
-　　4. FastCGI 的应用程序亦兼容于 CGI。即 FastCGI 的应用程序也可以当成 CGI 来执行。
+　 3. FastCGI 支持 C/C++，Ruby, Perl，Tcl，Java，Python 等程序语言。
 
-　　5. 现有的 CGI 程序要改写成 FastCGI 非常简单，最少可能只需要多加入三行程序代码。
+　 4. FastCGI 的应用程序亦兼容于 CGI。即 FastCGI 的应用程序也可以当成 CGI 来执行。
 
+　 5. 现有的 CGI 程序要改写成 FastCGI 非常简单，最少可能只需要多加入三行程序代码。
 
-　　6. FastCGI 的侦错方式与 CGI 大同小异，只要带入程序所需的环境变量及参数，即可在命令列模式执行或侦错。
+　 6. FastCGI 的侦错方式与 CGI 大同小异，只要带入程序所需的环境变量及参数，即可在命令列模式执行或侦错。
 
-　　7. FastCGI 应用程序的写作方式与 CGI 类似，除了几项原则要特别注意外，FastCGI 的写作方式跟 CGI 几乎一样，与学习 Web Server API 比较起来， FastCGI 简单多了。
+　 7. FastCGI 应用程序的写作方式与 CGI 类似，除了几项原则要特别注意外，FastCGI 的写作方式跟 CGI 几乎一样，与学习 Web Server API 比较起来， FastCGI 简单多了。
 
-　　8. FastCGI 支授分布式运算 (distributed computing)，即 FastCGI 程序可以在网站服务器以外的主机上执行并且接受来自其它网站服务器来的请求。
+　 8. FastCGI 支授分布式运算 (distributed computing)，即 FastCGI 程序可以在网站服务器以外的主机上执行并且接受来自其它网站服务器来的请求。
 
 PHP的FastCGI使你的所有php应用软件通过mod_fastci运行，而不是mod_phpsusexec。FastCGI应用速度很快 是因为他们持久稳定。不必对每一个请求都启动和初始化。这使得应用程序的开发成为可能，否则在CGI范例是不切实际的（例如一个大型的脚本，或者一个需要 连接单个或多个数据库的应用）。
 
