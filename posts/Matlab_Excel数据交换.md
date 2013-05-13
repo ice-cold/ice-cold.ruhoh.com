@@ -11,11 +11,17 @@ tags: [matlab, excel ]
 (1)常规：xlswrite与xlsread；
 
 (2)DDE：
+
         chann = ddeinit('excel','sheet1'); %(e.xls:sheet1)
+        
         range = 'r1c1:r20c20';
+        
         %写数据 
+        
         rc = ddepoke(chann,range,z); %(注，动态数据交换时，此xls文件需要在Excel中已打开)
+        
         %读数据 
+        
         feature = dderep(chann, range);
 
 (3)excel link
